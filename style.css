@@ -21,6 +21,7 @@ body {
 #form {
     position: absolute;
     box-sizing: border-box;
+    display: inline-block;
     top : 23.6%;
     right: 14.2%;
     width: 40.5%;
@@ -31,10 +32,52 @@ body {
     padding : 0px 3.3%  /* 584/488/2 */
 
 }
+#form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid #D0D0D0;
+}
+.grouped {
+    width: 100%;
+    display: inline-block;
+}
+.grouped input{
+    width: 50%;
+}
+.grouped label{
+    width: 50%;
+}
+
 
 #form h1 {
 
     margin: 0;
     margin-top : 4.5%;
     padding: 0;
+}
+select:focus{
+    outline: none;
+}
+select{
+    border: none;
+    width: 100%;
+    height: auto;
+}
+option{
+    width: 40%;
+    font-size: 1.2em;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+    display: inline-block;
+    border:none;
+    border-radius: 20px;
+    color: white;
+    background-color: #EFEFEF;
+}
+option:checked{
+    background-color: #9DD129;
+}
+option:focus{
+    background-color: #9DD129;
 }
