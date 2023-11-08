@@ -4,7 +4,6 @@ body {
     height: 100vh;
     width: 100%;
     font-family: Helvetica;
-
     display: inline-block;
 }
 h1 {
@@ -28,12 +27,17 @@ p{
 #image {
     position:relative;
     width: 100%;
-    height: 29.8%; /* 374 / 1254 pour obtenir des %*/
+     /* 374 / 1254 pour obtenir des %*/
+     /* height: 29.8%; */
     background-color: lightgreen;
+}
+#image img {
+    width: 100%;
+    
 }
 #infos{
     position: relative;
-    top: 9.1%; /* 114/1254 pour obtenir des % */
+    top: 9.09%; /* 114/1254 pour obtenir des % */
     width: 25.2%;
     margin-left: 14.2%;
 
@@ -43,35 +47,41 @@ p{
 #form {
     position: absolute;
     box-sizing: border-box;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     top : 23.6%; /* 296 / 1254*/ 
     right: 14.2%; /* 205 / 1440 */
     width: 40.5%;  /*584 / 1440 */ 
     height: 70%;    /*875 / 1254 */
-
     background-color: white;
     border-radius: 8px;
     padding : 0px 3.3%  /* 584/488/2 */;
     box-shadow: 0px 4px 28px 0px #1C85A621 ;
-
-
 }
+
 #form input[type="text"] {
-    width: 100%;
+    
     border: none;
     border-bottom: 1.5px solid #D0D0D0;
 }
-.grouped {
+
+.txt input {
     width: 100%;
-    height: auto;
-    display: inline-block;
+}
+.grouped{
+    display: flex;
+    flex-direction: row;
+}
+
+.grouped div {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
 }
 .grouped input{
-    width: 50%;
+    width: 90%;
 }
-.grouped label{
-    width: 50%;
-}
+
 
 
 #form h1 {
