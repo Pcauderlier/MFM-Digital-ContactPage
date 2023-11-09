@@ -116,12 +116,6 @@ outline: none;
     top: 14px;
     left: 56px;
 }
-.txt  input {
-    margin-bottom: 32px;
-    margin-top: 14px;
-    font-size: 18px;
-
-}
 
 /*Div Formulaire : */
 
@@ -139,12 +133,18 @@ outline: none;
     padding : 0px 3.3%  /* 584/488/2 */;
     box-shadow: 0px 4px 28px 0px #1C85A621 ;
     font-weight: 400;
+
 }
 
 #form input[type="text"] {
     
     border: none;
     border-bottom: 1.5px solid #D0D0D0;
+    width: 100%;
+    margin-bottom: 32px;
+    margin-top: 14px;
+    font-size: 18px;
+    box-sizing: border-box;
 }
 #form input[type="text"]:focus{
     outline: none;
@@ -152,9 +152,7 @@ outline: none;
     border-radius: 20px;
 }
 
-.txt input {
-    width: 100%;
-}
+
 .grouped{
     display: flex;
     flex-direction: row;
@@ -165,7 +163,7 @@ outline: none;
     flex-direction: column;
     width: 45%;
 }
-.grouped input{
+.grouped input[type="text"]{
     width: 90%;
 }
 
@@ -173,17 +171,59 @@ outline: none;
     margin-top : 4.5%; /*40 / 875 (hauteur de la div) */
     margin-bottom: 9.6px ; /* 24px au total, mais avec une line-height de 32,4px et un font size de 18, le p à déja une "margin" de 14,4px*/
 }
-
-/* Style différent pour les 2 <p> dans la div Form */
-
 #form > p{
     line-height: 32.4px;
 }
-form p {
-    color: red;
-    margin: 0;
+
+/* Style de checkbox */
+.check {
+    display: flex;
+    flex-direction: row;
+    align-items:start;
+}
+
+.check span {
+    display: block;
     line-height: 25.2px;
     font-size: 14px;
+    width: 77.74%; /* 454 / 584 */
+    leading-trim: both;  /* Decouvert en copiant le code CSS depuis le figma, je ne conaissais pas avant ! */
+    text-edge: cap;
 }
+
+input[type="checkbox"] {
+    display: block;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance:none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #9DD129;
+    border-radius: 5px;
+    /* background: linear-gradient(0deg, #9DD129, #9DD129),
+    linear-gradient(0deg, #9DD129, #9DD129); */
+}
+input[type="checkbox"]:checked {
+    background: linear-gradient(0deg, #9DD129, #9DD129),
+    linear-gradient(0deg, #9DD129, #9DD129);;
+}
+ 
+input[type="submit"] {
+    outline: none;
+    border: none;
+    border-radius: 44px;
+    background-color: #9DD129;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    width: 33.9%; /*198/584 */
+    height: 6.5%; /*57 / 875 */
+    margin: 48px 0 56px 201px;
+
+}
+
+
+
+
 
 

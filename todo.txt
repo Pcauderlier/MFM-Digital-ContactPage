@@ -1,2 +1,6 @@
- - Regler les margin avec la line-heigth  / vertical trim
- 
+- margin entre les div dans grouped
+- espace LK FB
+- régulariser avec les ligne-heigth
+- tout mettre en %
+- checkbox pas finie
+-transitions !
