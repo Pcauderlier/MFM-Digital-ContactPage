@@ -1,3 +1,4 @@
+/* Style sur élément généraux : */
 body {
     margin:0;
     padding: 0;
@@ -15,24 +16,25 @@ p{
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 0em;
+    margin: 0;
 }
 
-#infos p{
-    
-    line-height: 41.8px;
-    box-sizing: border-box;
-    margin : 1em 0px; /* Pas tout a fait = 24px mais avec la line-height qui dépasse au dessus et en dessous, cela s'en rapproche */
-    
-}
+/*Image de fond : */
+
 #image {
     position:relative;
     width: 100%;
      /* 374 / 1254 pour obtenir des %*/
      /* height: 29.8%; */
-    background-color: lightgreen;
 }
+
 #image img {
-    width: 100%;
+    width: 100%;   
+}
+/*#infos : */
+#infos p{
+    
+    line-height: 41.8px;
     
 }
 #infos{
@@ -43,65 +45,22 @@ p{
 
 
 }
+/*Boutons radio :  */
 
-#form {
-    position: absolute;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    top : 23.6%; /* 296 / 1254*/ 
-    right: 14.2%; /* 205 / 1440 */
-    width: 40.5%;  /*584 / 1440 */ 
-    height: 70%;    /*875 / 1254 */
-    background-color: white;
-    border-radius: 8px;
-    padding : 0px 3.3%  /* 584/488/2 */;
-    box-shadow: 0px 4px 28px 0px #1C85A621 ;
-}
-
-#form input[type="text"] {
-    
-    border: none;
-    border-bottom: 1.5px solid #D0D0D0;
-}
-
-.txt input {
-    width: 100%;
-}
-.grouped{
-    display: flex;
-    flex-direction: row;
-}
-
-.grouped div {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-}
-.grouped input{
-    width: 90%;
-}
-
-
-
-#form h1 {
-    margin-top : 4.5%; /*40 / 875 (hauteur de la div) */
-}
 #groupedButton{
     position: relative;
     display: inline-block;
     background-color: #EFEFEF;
     border-radius: 20px;
     height: 41px;
+    margin-bottom : 40px;
+    margin-top: 25.6px; /* le <p> juste au dessus avec sa line-height de 32.4 px et son size de 18px à déja une pseudo margin bottom de 14,4px  */
 }
 
 .labelRadio{
     position : relative;
     margin: 0;
     padding: 0;
-    
-    
-    
 }
 input[type="radio"]{
     margin: 0;
@@ -129,7 +88,6 @@ input[type="radio"]:checked ~ .innerRadio svg path {
 input[type="radio"]:focus { 
 outline: none;
 }
-
 .innerRadio {
     margin: 0;
     width: 150px;
@@ -138,7 +96,6 @@ outline: none;
     top: -26px; 
     left: 0px;
 }
-
 #tete  {
     position: absolute;
     top:10px;
@@ -159,4 +116,74 @@ outline: none;
     top: 14px;
     left: 56px;
 }
+.txt  input {
+    margin-bottom: 32px;
+    margin-top: 14px;
+    font-size: 18px;
+
+}
+
+/*Div Formulaire : */
+
+#form {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    top : 23.6%; /* 296 / 1254*/ 
+    right: 14.2%; /* 205 / 1440 */
+    width: 40.5%;  /*584 / 1440 */ 
+    height: 70%;    /*875 / 1254 */
+    background-color: white;
+    border-radius: 8px;
+    padding : 0px 3.3%  /* 584/488/2 */;
+    box-shadow: 0px 4px 28px 0px #1C85A621 ;
+    font-weight: 400;
+}
+
+#form input[type="text"] {
+    
+    border: none;
+    border-bottom: 1.5px solid #D0D0D0;
+}
+#form input[type="text"]:focus{
+    outline: none;
+    border: 1px solid #9DD129;
+    border-radius: 20px;
+}
+
+.txt input {
+    width: 100%;
+}
+.grouped{
+    display: flex;
+    flex-direction: row;
+}
+
+.grouped div {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.grouped input{
+    width: 90%;
+}
+
+#form h1 {
+    margin-top : 4.5%; /*40 / 875 (hauteur de la div) */
+    margin-bottom: 9.6px ; /* 24px au total, mais avec une line-height de 32,4px et un font size de 18, le p à déja une "margin" de 14,4px*/
+}
+
+/* Style différent pour les 2 <p> dans la div Form */
+
+#form > p{
+    line-height: 32.4px;
+}
+form p {
+    color: red;
+    margin: 0;
+    line-height: 25.2px;
+    font-size: 14px;
+}
+
 
