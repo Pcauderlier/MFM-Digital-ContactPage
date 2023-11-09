@@ -24,12 +24,14 @@ p{
 #image {
     position:relative;
     width: 100%;
-     /* 374 / 1254 pour obtenir des %*/
-     /* height: 29.8%; */
+    height: 29.8%;
 }
 
 #image img {
-    width: 100%;   
+    width: 100%;  
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
 }
 /*#infos : */
 #infos p{
@@ -76,14 +78,18 @@ input[type="radio"]{
 }
 input[type="radio"]:checked { 
     background-color:#9DD129;
+    transition: 0.5s;
     
 }
 input[type="radio"]:checked ~ .innerRadio{
     color: white;
+    transition: 0.5s;
+
     
 }
 input[type="radio"]:checked ~ .innerRadio svg path {
     fill: white;
+    transition: 0.5s;
 }
 input[type="radio"]:focus { 
 outline: none;
