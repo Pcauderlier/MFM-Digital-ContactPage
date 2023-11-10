@@ -7,10 +7,14 @@ body {
     font-family: Helvetica;
     display: inline-block;
 }
+body ::selection{
+    background-color: #9DD129;
+    color: white;
+}
 h1 {
     font-size: 34px; 
     font-weight: 700;
-    margin: 0;
+    
 }
 p{
     font-size: 18px;
@@ -34,6 +38,18 @@ p{
     object-position: center; 
 }
 /*#infos : */
+@media screen and (max-width: 900px) {
+    #infos{
+        background-color: red;
+        color: blue;
+        position: relative;
+        top: 0px;
+    }
+    #form {
+        position: relative;
+    }
+}
+
 #infos p{
     
     line-height: 41.8px;
@@ -44,8 +60,9 @@ p{
     top: 9.09%; /* 114/1254 pour obtenir des % */
     width: 25.2%;
     margin-left: 14.2%;
-
-
+}
+#info h1 {
+    margin: 0;
 }
 /*Boutons radio :  */
 
@@ -133,7 +150,8 @@ outline: none;
     top : 23.6%; /* 296 / 1254*/ 
     right: 14.2%; /* 205 / 1440 */
     width: 40.5%;  /*584 / 1440 */ 
-    height: 70%;    /*875 / 1254 */
+    min-width: 366px ;
+    min-height:875px ;    /*875 / 1254 70%*/
     background-color: white;
     border-radius: 8px;
     padding : 0px 3.3%  /* 584/488/2 */;
@@ -167,15 +185,19 @@ outline: none;
 .grouped div {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 37.7%;
+}
+.grouped div:first-child{
+    margin-right: 18.18%;
 }
 .grouped input[type="text"]{
-    width: 90%;
+    width: 100%;
 }
 
 #form h1 {
-    margin-top : 4.5%; /*40 / 875 (hauteur de la div) */
-    margin-bottom: 9.6px ; /* 24px au total, mais avec une line-height de 32,4px et un font size de 18, le p à déja une "margin" de 14,4px*/
+    /*40 / 875 (hauteur de la div) */
+    /* 24px au total, mais avec une line-height de 32,4px et un font size de 18, le p à déja une "margin" de 14,4px*/
+    margin: 4.5% 0 9.6px 0;
 }
 #form > p{
     line-height: 32.4px;
