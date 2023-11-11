@@ -1,8 +1,0 @@
-
-- checkbox pas finie
-- line-hieght ==> Infos / span
-
-
-
-
-object-fit: cover;??

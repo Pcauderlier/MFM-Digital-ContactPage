@@ -5,16 +5,16 @@ body {
     height: 100vh;
     width: 100%;
     font-family: Helvetica;
-    display: inline-block;
+ 
 }
+
 body ::selection{
     background-color: #9DD129;
     color: white;
 }
-h1 {
+h2 {
     font-size: 34px; 
     font-weight: 700;
-    
 }
 p{
     font-size: 18px;
@@ -22,11 +22,17 @@ p{
     letter-spacing: 0em;
     margin: 0;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+}
 
 /*Image de fond : */
 
 #image {
-    position:relative;
     width: 100%;
     height: 29.8%;
 }
@@ -40,11 +46,9 @@ p{
 /*#infos : */
 @media screen and (max-width: 949px) {
     #infos{
-
         position: relative;
         width: 100%; 
         text-align: center; 
-        
         padding-top: 3vh;
         background-color: #EFEFEF;
         top: 0;
@@ -94,14 +98,18 @@ p{
         
 }
 #infos p{
+    /* Pas besoins de margin-top/bottom car la line-height de 41.8px - font-size de 18px = 23.8px et fait office de margin */
     line-height: 41.8px;
 }
 
-#infos h1 {
+#infos h2 {
     margin: 0;
 }
 #infos div img:first-child{
     margin-right: 14px;
+}
+#infos div {
+    padding-bottom: 20px;
 }
 /*Boutons radio :  */
 
@@ -129,7 +137,7 @@ input[type="radio"]{
     height: 41px;
     border-radius: 20px;
     background-color:inherit;
-    -webkit-appearance: none; 
+    -webkit-appearance: none; /* Permet de retirer les style par défault */
     -moz-appearance: none;
 }
 input[type="radio"]:checked { 
@@ -195,11 +203,9 @@ outline: none;
 }
 #form input[type="text"]:focus{
     outline: none;
-    border: 1px solid #9DD129;
-    border-radius: 20px;
+    border: none;
+    border-bottom:  2.5px solid #9DD129;
 }
-
-
 .grouped{
     display: flex;
     flex-direction: row;
@@ -217,7 +223,7 @@ outline: none;
     width: 100%;
 }
 
-#form h1 {
+#form h2 {
     /*40 / 875 (hauteur de la div) */
     /* 24px au total, mais avec une line-height de 32,4px et un font size de 18, le p à déja une "margin" de 14,4px don 9.6px en % = 9. 6*/
     margin: 3.18vh 0 1.91vh 0;
@@ -228,12 +234,14 @@ outline: none;
 
 /* Style de checkbox */
 .check {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items:start;
 }
 
 .check span {
+    margin-left: 16px;
     display: block;
     line-height: 25.2px;
     font-size: 14px;
@@ -241,21 +249,46 @@ outline: none;
 
 }
 
-input[type="checkbox"] {
-    display: block;
-    -webkit-appearance: none; 
-    -moz-appearance: none;
-    appearance:none;
-    width: 18px;
-    height: 18px;
+.check div {
+    position: relative;
+    top: 6.5px; /* line-height de du span = 22.5 - font-size = 14 == 8.5px // On retire les 2px de la border et on obtient 6.5px */
+    height: 14px;
+    width: 14px;
     border: 2px solid #9DD129;
     border-radius: 5px;
-    /* background: linear-gradient(0deg, #9DD129, #9DD129),
-    linear-gradient(0deg, #9DD129, #9DD129); */
+    
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    margin: 0;
+    top: 2px;
+    left: 2px;
+    display: block;
+    z-index: 2;
+    -webkit-appearance: none;  
+    -moz-appearance: none;
+    appearance:none;
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 2px;
 }
 input[type="checkbox"]:checked {
     background: linear-gradient(0deg, #9DD129, #9DD129),
     linear-gradient(0deg, #9DD129, #9DD129);;
+    border: 1px solid #9DD129;
+}
+
+.ok { /* class donnée au message de reussite de la requete pour l'envois de mail */ 
+    color: #9DD129;
+    font-weight: 700;
+    margin: 2vh 0 ;
+}
+.fail { /* class donnée au message d'erreur de la requete pour l'envois de mail */ 
+    color: red;
+    font-weight: 700;
+    margin: 2vh 0 ;
 }
  
 input[type="submit"] {
@@ -269,15 +302,10 @@ input[type="submit"] {
     font-weight: 700;
     width: 33.9%; /*198/584 */
     height: 4.54vh; /*57 / 1254 */
-    margin: 3.82vh 33% 4.46vh 33%;
-   
-    
-   
+    margin: 3.82vh 33% 4.46vh 33%; /* 33% sur les coté car la width est = 34%. Le but étant de centré le bouton ! */
 
 }
-
-
-
-
-
-
+input[type="submit"]:active{
+    box-shadow: 5px 5px  #80808082;
+    transition: 0.1s;
+}
