@@ -8,7 +8,7 @@ body {
  
 }
 
-body ::selection{
+body ::selection{ /* Permet de surligné en vert le text selectioné */
     background-color: #9DD129;
     color: white;
 }
@@ -34,14 +34,14 @@ a:hover {
 
 #image {
     width: 100%;
-    height: 29.8%;
+    height: 29.8vh; /* 374 / 1254 */
 }
 
 #image img {
     width: 100%;  
     height: 100%;
-    object-fit: cover;
-    object-position: center; 
+    object-fit: cover;  /* pour ne pas déformer l'image */
+    object-position: center; /* Pour garder la grenouille centrée */
 }
 /*#infos : */
 @media screen and (max-width: 949px) {
@@ -51,7 +51,6 @@ a:hover {
         text-align: center; 
         padding-top: 3vh;
         background-color: #EFEFEF;
-        top: 0;
         margin-left: 0;
         transition: 0.4s;
     }
@@ -60,8 +59,7 @@ a:hover {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
-        top: 0;
-        transform: translate(0,-30px);
+        transform: translate(0,-30px); /* Pour garder le formulaire dans l'image */
         transition: 0.3s;
     }
 }
@@ -69,8 +67,8 @@ a:hover {
     #infos{
         position: absolute;
         top: 38.9vh; /* 488/1254 pour obtenir des % */
-        width: 25.2%;
-        margin-left: 14.2%;
+        width: 25.2%; /* 363 / 1440 */
+        margin-left: 14.2%; /* 205 / 1440 */
         transition: 0.2s;
     }
     #form {
@@ -82,21 +80,7 @@ a:hover {
         
     }
 }
-#form {
-    box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-      
-        
-        min-width: 330px ;
-        min-height: 69.77vh;
-        background-color: white;
-        border-radius: 8px;
-        padding : 0px 3.3%  /* 584/488/2 */;
-        box-shadow: 0px 4px 28px 0px #1C85A621 ;
-        font-weight: 400;
-        
-}
+
 #infos p{
     /* Pas besoins de margin-top/bottom car la line-height de 41.8px - font-size de 18px = 23.8px et fait office de margin */
     line-height: 41.8px;
@@ -114,10 +98,8 @@ a:hover {
 /*Boutons radio :  */
 
 #groupedButton{
-    position: relative;
-    display: inline-block;
+
     background-color: #EFEFEF;
-    border-radius: 20px;
     height: 41px;
     margin-bottom : 4.57%; /*40 / 875 */ 
     margin-top: 2vh; /* le <p> juste au dessus avec sa line-height de 32.4 px et son size de 18px à déja une pseudo margin bottom de 14,4px donc 25,6 / 1254 */
@@ -145,25 +127,23 @@ input[type="radio"]:checked {
     transition: 0.5s;
     
 }
-input[type="radio"]:checked ~ .innerRadio{
+input[type="radio"]:checked ~ .innerRadio{ /* change la couleur du text dont l"input radio est checked */ 
     color: white;
     transition: 0.5s;
 
     
 }
-input[type="radio"]:checked ~ .innerRadio svg path {
+input[type="radio"]:checked ~ .innerRadio svg path { /* change la couleur du path du svg dont l"input radio est checked */ 
     fill: white;
     transition: 0.5s;
 }
-input[type="radio"]:focus { 
-outline: none;
-}
+
 .innerRadio {
     margin: 0;
     width: 150px;
     height: 41px;
     position: absolute; /* Meme dimensions que pour le radio, le but est de superposé le radio et le span dans le label */
-    top: -26px; 
+    top: -26px; /* Valeur totalement arbitraire, c'est la seul valeur que j'ai du trouver avec de l'essai erreur pour bien superposer le radio et le span */
     left: 0px;
 }
 #tete  {
@@ -181,7 +161,7 @@ outline: none;
     left: 24px;
     top: 10px;
 }
-.innerRadio span{
+.innerRadio span{ /* Partie txt du bouton*/
     position: absolute;
     top: 14px;
     left: 56px;
@@ -189,9 +169,22 @@ outline: none;
 
 /*Div Formulaire : */
 
+#form {
+    box-sizing: border-box; /* Pour que la div ne change pas de taille avec le padding */
+    display: flex;
+    flex-direction: column;
+    min-width: 330px ; /* Determiner afin d'eviter que les boutons Grenouille et Crapaud ne soit plus sur la meme ligne */
+    min-height: 69.77vh; /* 875 / 1254 (min pour permettre à notre formulaire de s'agrandir quand la width de la fenetre est plus petite )*/
+    background-color: white;
+    border-radius: 8px;
+    padding : 0px 3.3%  /* 48 / 1440 */;
+    box-shadow: 0px 4px 28px 0px #1C85A621 ;
+    font-weight: 400;
+        
+}
 
 
-#form input[type="text"] {
+#form input[type="text"], input[type="email"]{
     
     border: none;
     border-bottom: 1.5px solid #D0D0D0;
@@ -201,7 +194,7 @@ outline: none;
     font-size: 18px;
     box-sizing: border-box;
 }
-#form input[type="text"]:focus{
+#form input[type="text"]:focus, input[type="email"]:focus{
     outline: none;
     border: none;
     border-bottom:  2.5px solid #9DD129;
@@ -214,10 +207,10 @@ outline: none;
 .grouped div {
     display: flex;
     flex-direction: column;
-    width: 37.7%;
+    width: 45.08%; /* 220 / 488 (488 car 584-2*48 pour enlever le padding qui ne compte pas dans la largeur en %) */
 }
 .grouped div:first-child{
-    margin-right: 18.18%;
+    margin-right: 9.83%;  /* 48/488 (488 car 584-2*48 pour enlever le padding qui ne compte pas dans la largeur en %) */
 }
 .grouped input[type="text"]{
     width: 100%;
@@ -228,7 +221,7 @@ outline: none;
     /* 24px au total, mais avec une line-height de 32,4px et un font size de 18, le p à déja une "margin" de 14,4px don 9.6px en % = 9. 6*/
     margin: 3.18vh 0 1.91vh 0;
 }
-#form > p{
+#form p{
     line-height: 32.4px;
 }
 
@@ -242,7 +235,6 @@ outline: none;
 
 .check span {
     margin-left: 16px;
-    display: block;
     line-height: 25.2px;
     font-size: 14px;
     width: 77.74%; /* 454 / 584 */
@@ -262,13 +254,9 @@ outline: none;
 input[type="checkbox"] {
     position: absolute;
     margin: 0;
-    top: 2px;
+    top: 2px; /* Car border de la div est épaisse de 2px */
     left: 2px;
-    display: block;
-    z-index: 2;
-    -webkit-appearance: none;  
-    -moz-appearance: none;
-    appearance:none;
+    appearance:none; /* Pour la faire disparaitre quand elle n'est pas checked */
     width: 10px;
     height: 10px;
     border: 1px solid white;
@@ -305,7 +293,7 @@ input[type="submit"] {
     margin: 3.82vh 33% 4.46vh 33%; /* 33% sur les coté car la width est = 34%. Le but étant de centré le bouton ! */
 
 }
-input[type="submit"]:active{
+input[type="submit"]:active{ /* Pour donné un effet click */
     box-shadow: 5px 5px  #80808082;
     transition: 0.1s;
 }
